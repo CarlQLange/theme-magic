@@ -397,8 +397,8 @@ installed - and accessible from the user's home dir."
   ;; version of Python instead of the user's root version. To fix this, we
   ;; temporarily change to the user's dir.
   (let ((default-directory "~/"))
-    (unless (executable-find "python")
-      (user-error (concat "Could not find 'python' executable. "
+    (unless (executable-find "python3")
+      (user-error (concat "Could not find 'python3' executable. "
                           "Is Python installed and on the path?")))
     (unless (executable-find "wal")
       (user-error (concat "Could not find 'wal' executable. "
@@ -430,7 +430,7 @@ doesn't provide any wrapper feedback to the user."
         (default-directory "~/")
         ;; The color modification script will work with python 2 or 3, so just
         ;; use the default Python.
-        (python-executable "python")
+        (python-executable "python3")
         (theming-script theme-magic--pywal-python-script)
         )
     ;; We have to use apply here to expand the list of colors.
